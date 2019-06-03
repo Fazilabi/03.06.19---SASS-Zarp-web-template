@@ -1,0 +1,114 @@
+body{
+    font-family: $font_family;
+}
+a{
+    color: $primary_color;
+}
+
+
+
+%btn{
+    border-radius: 5px;
+    width: auto;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    // height: 45px;
+    // line-height: 30px;
+    text-align: center;   
+    font-size: $nav_size;
+    transition: .2s ease-in-out;
+}
+.btn-navy{
+    @extend %btn;
+    background-color: $helper_color;
+    border-color: $helper_color;    
+    &:hover{
+        background-color:lighten( $helper_color, 10);
+        border-color: lighten( $helper_color, 10);
+       
+    }
+}
+
+.btn-green{
+    @extend %btn;
+    background-color: $green_color;
+    border-color: $green_color; 
+    padding: 17px 30px !important; 
+    color: white;  
+    &:hover{
+        background-color:$helper_color;
+        border-color: $helper_color;
+        color: white;
+       
+    }
+}
+
+.btn-navy-outline{
+    @extend %btn;
+    box-sizing: border-box; 
+    background-color: $white_color;
+    border-color: $helper_color;
+    padding: 15px 30px !important; 
+    color: $text_color;     
+    font-size: $nav_size*1.2;
+    &:hover{
+        background-color: $helper_color;
+        border-color: $helper_color;
+        color: $white_color;
+       
+    }
+}
+
+p, li{
+    color: $text_color;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.checked{
+    
+    position: relative;
+    font-size: $link_size;
+    margin-bottom: 30px;
+    li:before{
+        content: '\f00c';
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: $green_color;
+        margin-right: 5px;
+    }
+}
+.social{
+    ul{
+        margin-bottom: 30px;
+        li{
+            display: inline;
+            a{
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                font-size: $link_size*1.25;
+                border: 1px solid $light_gray;
+                border-radius: 10px;
+                text-align: center;
+                line-height: 40px;
+                margin-right: 10px;
+                @include setTransition(all, 0.5s);
+
+                i{
+                    color: $text_color;
+
+                }
+                &:hover{
+                    background-color: $green_color;
+                    i{
+                        color: white;
+                    }
+                }
+
+            }
+        }
+    }
+}
